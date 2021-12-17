@@ -13,6 +13,7 @@
     """,
 
     'author': "Gerardo A Lopez Vega",
+    'email': "gerardo.lopez@yuju.io",
     'website': "https://yuju.io/",
     'category': 'Sales',
     'version': '0.0.1',
