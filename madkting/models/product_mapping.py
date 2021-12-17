@@ -143,12 +143,14 @@ class ProductYujuMapping(models.Model):
 
 class YujuMappingModel(models.Model):
     _name = "yuju.mapping.model"
+    _description = 'Yuju Mapping Model'
 
     name = fields.Char('Modelo Mapeo')
     code = fields.Char('Codigo')
 
 class YujuMappingField(models.Model):
     _name = "yuju.mapping.field"
+    _description = 'Yuju Mapping Fields'
 
     name = fields.Char('Yuju Field')
     field = fields.Char('Odoo Field')
@@ -185,6 +187,7 @@ class YujuMappingField(models.Model):
 
 class YujuMappingFieldValue(models.Model):
     _name = "yuju.mapping.field.value"
+    _description = 'Yuju Mapping Fields Values'
 
     name = fields.Char('Yuju Value')
     value = fields.Char('Odoo Value')
