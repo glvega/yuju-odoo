@@ -12,7 +12,7 @@
         - Update your stock from odoo to your Yuju account.
     """,
 
-    'author': "Gerardo A Lopez Vega",
+    'author': "Gerardo A Lopez Vega @glopzvega",
     'email': "gerardo.lopez@yuju.io",
     'website': "https://yuju.io/",
     'category': 'Sales',
