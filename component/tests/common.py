@@ -74,10 +74,10 @@ class TransactionComponentCase(common.TransactionCase, ComponentMixin):
         ComponentMixin.setUp(self)
 
 
-class SavepointComponentCase(common.SavepointCase, ComponentMixin):
-    """ A SavepointCase that loads all the components
+class SavepointComponentCase(common.TransactionCase, ComponentMixin):
+    """ A TransactionCase that loads all the components
 
-    It it used like an usual Odoo's SavepointCase, but it ensures
+    It it used like an usual Odoo's TransactionCase, but it ensures
     that all the components of the current addon and its dependencies
     are loaded.
 
@@ -90,9 +90,9 @@ class SavepointComponentCase(common.SavepointCase, ComponentMixin):
 
     # pylint: disable=W8106
     def setUp(self):
-        # resolve an inheritance issue (common.SavepointCase does not call
+        # resolve an inheritance issue (common.TransactionCase does not call
         # super)
-        common.SavepointCase.setUp(self)
+        common.TransactionCase.setUp(self)
         ComponentMixin.setUp(self)
 
 
@@ -204,17 +204,17 @@ class TransactionComponentRegistryCase(common.TransactionCase, ComponentRegistry
         ComponentRegistryCase.tearDown(self)
 
 
-class SavepointComponentRegistryCase(common.SavepointCase, ComponentRegistryCase):
+class SavepointComponentRegistryCase(common.TransactionCase, ComponentRegistryCase):
     """ Adds Odoo Transaction with Savepoint in the base Component TestCase """
 
     # pylint: disable=W8106
     def setUp(self):
-        # resolve an inheritance issue (common.SavepointCase does not use
+        # resolve an inheritance issue (common.TransactionCase does not use
         # super)
-        common.SavepointCase.setUp(self)
+        common.TransactionCase.setUp(self)
         ComponentRegistryCase.setUp(self)
         self.collection = self.env["collection.base"]
 
     def teardown(self):
-        common.SavepointCase.tearDown(self)
+        common.TransactionCase.tearDown(self)
         ComponentRegistryCase.tearDown(self)
